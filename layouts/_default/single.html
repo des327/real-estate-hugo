@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }} | {{ .Site.Params.name }}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #0054A0; }
+        body { background-color: var(--primary); font-family: 'Heebo', sans-serif; margin: 0; padding: 40px 20px; display: flex; justify-content: center; min-height: 100vh; }
+        .container { background-color: white; max-width: 800px; width: 100%; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); overflow: hidden; }
+        .header { background-color: var(--primary); color: white; text-align: center; padding: 40px 20px; }
+        img.logo { max-width: 250px; margin-bottom: 20px; }
+        h1 { margin: 10px 0; color: white; font-family: 'Manrope', sans-serif; }
+        .content { padding: 40px; line-height: 1.8; color: #333; }
+        .content h2 { color: var(--primary); font-family: 'Manrope', sans-serif; margin-top: 30px; }
+        .footer { background: #f4f4f4; padding: 30px; text-align: center; color: #666; border-top: 1px solid #ddd; }
+        .footer a { color: var(--primary); text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <img src="{{ .Site.Params.logo }}" alt="Logo" class="logo">
+        <h1>{{ .Title }}</h1>
+        <p class="date">{{ .Date.Format "January 2, 2006" }}</p>
+    </div>
+    <div class="content">{{ .Content }}</div>
+    <div class="footer">
+        <strong>{{ .Site.Params.name }}</strong><br>
+        <a href="/">← Back to Home</a>
+    </div>
+</div>
+</body>
+</html>

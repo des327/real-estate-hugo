@@ -1,0 +1,12 @@
+baseURL = 'https://www.equitynminsights.com/'
+languageCode = 'en-us'
+title = 'ABQ Real Estate Insights'
+
+[params]
+  logo = '/equity-logo.png'
+  description = "Real Estate Market Reports for Albuquerque and Santa Fe"
+  name = "Dismas Desloge Equity New Mexico Real Estate"
+  phone = "505-271-2228"
+  email = "me@dismas.broker"
+  primaryColor = "#0054A0"
+  secondaryColor = "#DADADA"
