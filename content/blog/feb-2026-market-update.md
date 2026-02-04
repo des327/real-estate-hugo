@@ -20,7 +20,7 @@ The February numbers are in, and we are seeing some interesting shifts in the ma
 
 ## Download the Full Reports
 We have the official detailed breakdowns available for download:
-* [Download Albuquerque Weekly Report (PDF)](/reports/Vadm-qqM.pdf)
-* [Download Santa Fe Stats (PDF)](/reports/VatG-z9U.pdf)
+* [Download Albuquerque Weekly Report (PDF)](/reports/abq.pdf)
+* [Download Santa Fe Stats (PDF)](/reports/santa-fe.pdf)
 
 **Thinking of selling this spring?** [Contact us](/contact/) for a strategy session.
