@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | {{ .Site.Params.name }}</title>
+    <style>
+        body { font-family: sans-serif; padding: 40px; max-width: 800px; margin: 0 auto; background: #f4f4f4; }
+        .post-item { background: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        h2 a { color: #0054A0; text-decoration: none; }
+        .date { color: #666; font-size: 0.9em; }
+        .footer { margin-top: 40px; text-align: center; color: #888; font-size: 0.8em; }
+    </style>
+</head>
+<body>
+    <h1>Market Insights</h1>
+
+    {{ range .Pages }}
+      {{ if gt .Date.Year 2020 }}
+        <div class="post-item">
+            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            <p class="date">{{ .Date.Format "January 2, 2006" }}</p>
+            <p>{{ .Summary }}</p>
+            <a href="{{ .RelPermalink }}">Read Article →</a>
+        </div>
+      {{ end }}
+    {{ end }}
+
+    <div class="footer">
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+baseURL = "https://www.equitynminsights.com/"
+languageCode = "en-us"
+title = "Equity New Mexico Insights"
+theme = "real-estate-hugo"
+
+[params]
+  logo = "/images/logo.png"
+  name = "Equity New Mexico Real Estate"
+  description = "Market updates and real estate news for NM."
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Market Updates"
+    url = "/blog/"
+    weight = 2
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 3
