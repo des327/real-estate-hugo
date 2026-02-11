@@ -1,7 +1,6 @@
 baseURL = "https://www.equitynminsights.com/"
 languageCode = "en-us"
 title = "Equity New Mexico Insights"
-theme = "real-estate-hugo"
 
 [params]
   logo = "/images/logo.png"
