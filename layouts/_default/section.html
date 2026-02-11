@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ .Title }} | {{ .Site.Title }}</title>
+  <style>
+    body { font-family: sans-serif; padding: 40px; max-width: 1000px; margin: 0 auto; background: #0b1220; color: #e8eefc; }
+    a { color: #6ea8ff; }
+    .card { background: rgba(255,255,255,0.06); border-radius: 16px; padding: 28px; }
+  </style>
+</head>
+<body>
+  <p><a href="/">← Home</a></p>
+  <div class="card">
+    <h1>{{ .Title }}</h1>
+
+    {{ if .Pages }}
+      <ul>
+        {{ range .Pages }}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        {{ end }}
+      </ul>
+    {{ else }}
+      <p>Coming soon.</p>
+    {{ end }}
+  </div>
+</body>
+</html>
