@@ -9,11 +9,11 @@
 </head>
 <body class="bg-slate-900 text-white font-sans antialiased flex flex-col min-h-screen">
   
-  <nav class="p-6 border-b border-slate-800">
+  <nav class="p-6 border-b border-slate-800 bg-slate-900/90 backdrop-blur sticky top-0 z-50">
     <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <a href="/" class="flex items-center gap-3">
-         <img src="{{ .Site.Params.logo }}" alt="Equity Logo" class="h-10 w-auto">
-         <span class="font-bold text-xl tracking-tight hidden md:block">{{ .Site.Title }}</span>
+      <a href="/" class="flex items-center gap-3 group">
+         <img src="{{ .Site.Params.logo }}" alt="Logo" class="h-10 w-auto">
+         <span class="font-bold text-xl tracking-tight hidden md:block group-hover:text-blue-400 transition">{{ .Site.Title }}</span>
       </a>
       <div class="space-x-8 text-sm font-medium">
         {{ range .Site.Menus.main }}
@@ -27,9 +27,8 @@
     {{ block "main" . }}{{ end }}
   </main>
 
-  <footer class="py-10 text-center text-slate-500 text-sm border-t border-slate-800 mt-12">
+  <footer class="py-10 text-center text-slate-500 text-sm border-t border-slate-800 mt-auto">
     <p>&copy; 2026 {{ .Site.Params.name }}. All rights reserved.</p>
-    <p class="mt-2">New Mexico Real Estate Market Intelligence</p>
   </footer>
 </body>
 </html>

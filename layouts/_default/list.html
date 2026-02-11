@@ -1,33 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | {{ .Site.Params.name }}</title>
-    <style>
-        body { font-family: sans-serif; padding: 40px; max-width: 800px; margin: 0 auto; background: #f4f4f4; }
-        .post-item { background: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        h2 a { color: #0054A0; text-decoration: none; }
-        .date { color: #666; font-size: 0.9em; }
-        .footer { margin-top: 40px; text-align: center; color: #888; font-size: 0.8em; }
-    </style>
-</head>
-<body>
-    <h1>Market Insights</h1>
-
+{{ define "main" }}
+<div class="max-w-4xl mx-auto py-16 px-6">
+  <h1 class="text-4xl font-bold mb-12 text-center border-b border-slate-800 pb-8">Market Updates</h1>
+  <div class="grid gap-8">
     {{ range .Pages }}
-      {{ if gt .Date.Year 2020 }}
-        <div class="post-item">
-            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-            <p class="date">{{ .Date.Format "January 2, 2006" }}</p>
-            <p>{{ .Summary }}</p>
-            <a href="{{ .RelPermalink }}">Read Article →</a>
-        </div>
-      {{ end }}
+    <article class="bg-slate-800 p-8 rounded-xl border border-slate-700 hover:border-blue-500 transition-colors">
+      <h2 class="text-2xl font-bold mb-2">
+        <a href="{{ .RelPermalink }}" class="hover:text-blue-400">{{ .Title }}</a>
+      </h2>
+      <time class="text-slate-400 text-sm mb-4 block">{{ .Date.Format "January 2, 2006" }}</time>
+      <p class="text-slate-300 leading-relaxed mb-4">{{ .Summary }}</p>
+      <a href="{{ .RelPermalink }}" class="text-blue-400 font-medium hover:text-blue-300">Read Article &rarr;</a>
+    </article>
     {{ end }}
-
-    <div class="footer">
-        <a href="/">Back to Home</a>
-    </div>
-</body>
-</html>
+  </div>
+</div>
+{{ end }}
