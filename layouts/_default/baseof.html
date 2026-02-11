@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ .Title }} | {{ .Site.Title }}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+</head>
+<body class="bg-slate-900 text-white font-sans antialiased flex flex-col min-h-screen">
+  
+  <nav class="p-6 border-b border-slate-800">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <a href="/" class="flex items-center gap-3">
+         <img src="{{ .Site.Params.logo }}" alt="Equity Logo" class="h-10 w-auto">
+         <span class="font-bold text-xl tracking-tight hidden md:block">{{ .Site.Title }}</span>
+      </a>
+      <div class="space-x-8 text-sm font-medium">
+        {{ range .Site.Menus.main }}
+        <a href="{{ .URL }}" class="hover:text-blue-400 transition-colors">{{ .Name }}</a>
+        {{ end }}
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow">
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <footer class="py-10 text-center text-slate-500 text-sm border-t border-slate-800 mt-12">
+    <p>&copy; 2026 {{ .Site.Params.name }}. All rights reserved.</p>
+    <p class="mt-2">New Mexico Real Estate Market Intelligence</p>
+  </footer>
+</body>
+</html>

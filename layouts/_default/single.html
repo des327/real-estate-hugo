@@ -1,23 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ .Title }} | {{ .Site.Title }}</title>
-  <style>
-    body { font-family: sans-serif; padding: 40px; max-width: 1000px; margin: 0 auto; background: #0b1220; color: #e8eefc; }
-    a { color: #6ea8ff; }
-    .card { background: rgba(255,255,255,0.06); border-radius: 16px; padding: 28px; }
-    .meta { opacity: 0.7; margin-top: 6px; }
-  </style>
-</head>
-<body>
-  <p><a href="/">← Home</a></p>
-  <div class="card">
-    <h1>{{ .Title }}</h1>
-    {{ with .Date }}<div class="meta">{{ .Format "January 2, 2006" }}</div>{{ end }}
-    <hr style="border:0;border-top:1px solid rgba(255,255,255,0.12);margin:18px 0;">
+{{ define "main" }}
+<article class="max-w-3xl mx-auto py-16 px-6">
+  <header class="mb-10 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">{{ .Title }}</h1>
+    <time class="text-slate-400 font-medium">{{ .Date.Format "January 2, 2006" }}</time>
+  </header>
+  <div class="prose prose-invert prose-lg mx-auto prose-a:text-blue-400 hover:prose-a:text-blue-300">
     {{ .Content }}
   </div>
-</body>
-</html>
+</article>
+{{ end }}
