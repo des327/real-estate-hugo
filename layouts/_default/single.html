@@ -1,36 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ .Title }} | {{ .Site.Title }}</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-</head>
-<body class="bg-[#0f172a] text-white font-sans antialiased flex flex-col min-h-screen">
-  <nav class="p-6 border-b border-slate-800 bg-[#0f172a] sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <div class="flex items-center gap-4">
-         <a href="/">
-           <img src="/images/logo.png" alt="Equity NM" style="background-color: white; padding: 5px; border-radius: 4px; height: 45px; width: auto;">
-         </a>
-      </div>
-      <div class="space-x-8 text-sm font-medium text-slate-300">
-        <a href="/" class="hover:text-white transition-colors">Home</a>
-        <a href="/albuquerque/" class="hover:text-white transition-colors">Albuquerque</a>
-        <a href="/santa-fe/" class="hover:text-white transition-colors">Santa Fe</a>
-      </div>
-    </div>
-  </nav>
-
-  <main class="flex-grow max-w-3xl mx-auto py-16 px-6 w-full">
-    <header class="mb-10 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">{{ .Title }}</h1>
-      <time class="text-slate-400 font-medium">{{ .Date.Format "January 2, 2006" }}</time>
-    </header>
-    <div class="prose prose-invert prose-lg mx-auto prose-a:text-blue-400 hover:prose-a:text-blue-300 prose-headings:text-white">
-      {{ .Content }}
-    </div>
-  </main>
-</body>
-</html>
+{{ define "main" }}
+<div class="max-w-3xl mx-auto py-16 px-6 w-full">
+  <header class="mb-10 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">{{ .Title }}</h1>
+    <time class="text-slate-400 font-medium">{{ .Date.Format "January 2, 2006" }}</time>
+  </header>
+  <div class="prose prose-invert prose-lg mx-auto prose-a:text-blue-400 hover:prose-a:text-blue-300 prose-headings:text-white">
+    {{ .Content }}
+  </div>
+</div>
+{{ end }}

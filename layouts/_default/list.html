@@ -1,49 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ .Title }} | {{ .Site.Title }}</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-[#0f172a] text-white font-sans antialiased flex flex-col min-h-screen">
+{{ define "main" }}
+<div class="max-w-4xl mx-auto py-16 px-6 w-full">
+  <h1 class="text-4xl font-bold mb-12 text-center border-b border-slate-800 pb-8 uppercase tracking-widest text-blue-400">
+    {{ .Title }} Market Updates
+  </h1>
   
-  <nav class="p-6 border-b border-slate-800 bg-[#0f172a] sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-      <div class="flex items-center gap-4">
-         <a href="/">
-           <img src="/images/logo.png" alt="Equity NM" style="background-color: white; padding: 5px; border-radius: 4px; height: 45px; width: auto;">
-         </a>
-      </div>
-      <div class="space-x-8 text-sm font-medium text-slate-300">
-        <a href="/" class="hover:text-white transition-colors">Home</a>
-        <a href="/albuquerque/" class="hover:text-white transition-colors">Albuquerque</a>
-        <a href="/santa-fe/" class="hover:text-white transition-colors">Santa Fe</a>
-      </div>
-    </div>
-  </nav>
-
-  <main class="flex-grow max-w-4xl mx-auto py-16 px-6 w-full">
-    <h1 class="text-4xl font-bold mb-12 text-center border-b border-slate-800 pb-8 uppercase tracking-widest text-blue-400">
-      {{ .Title }} Market Updates
-    </h1>
-    
-    <div class="grid gap-8">
-      {{ range .Pages }}
-      <article class="bg-[#1e293b] p-8 rounded-xl border border-slate-700 hover:border-blue-500 transition-colors">
-        <h2 class="text-2xl font-bold mb-2">
-          <a href="{{ .RelPermalink }}" class="hover:text-blue-400">{{ .Title }}</a>
-        </h2>
-        <time class="text-slate-400 text-sm mb-4 block">{{ .Date.Format "January 2, 2006" }}</time>
-        <p class="text-slate-300 leading-relaxed mb-4">{{ .Summary }}</p>
-        <a href="{{ .RelPermalink }}" class="text-blue-400 font-medium hover:text-blue-300">Read Article &rarr;</a>
-      </article>
-      {{ end }}
-    </div>
-  </main>
-
-  <footer class="py-10 text-center text-slate-500 text-sm border-t border-slate-800 mt-auto">
-    <p>&copy; 2026 {{ .Site.Params.name }}. All rights reserved.</p>
-  </footer>
-</body>
-</html>
+  <div class="grid gap-8">
+    {{ range .Pages }}
+    <article class="bg-[#1e293b] p-8 rounded-xl border border-slate-700 hover:border-blue-500 transition-colors">
+      <h2 class="text-2xl font-bold mb-2">
+        <a href="{{ .RelPermalink }}" class="hover:text-blue-400">{{ .Title }}</a>
+      </h2>
+      <time class="text-slate-400 text-sm mb-4 block">{{ .Date.Format "January 2, 2006" }}</time>
+      <p class="text-slate-300 leading-relaxed mb-4">{{ .Summary }}</p>
+      <a href="{{ .RelPermalink }}" class="text-blue-400 font-medium hover:text-blue-300">Read Article &rarr;</a>
+    </article>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

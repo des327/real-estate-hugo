@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ .Title }} | {{ .Site.Title }}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+</head>
+<body class="bg-[#0f172a] text-white font-sans antialiased flex flex-col min-h-screen">
+  
+  <nav class="p-6 border-b border-slate-800 bg-[#0f172a] sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <div class="flex items-center gap-4">
+         <a href="/">
+           <img src="/images/logo.png" alt="Equity NM" style="height: 45px; width: auto; filter: brightness(0) invert(1);">
+         </a>
+         <div class="hidden md:block leading-tight">
+           <div class="font-bold text-lg">Insights</div>
+           <div class="text-xs text-slate-400">Market Intelligence</div>
+         </div>
+      </div>
+      <div class="space-x-8 text-sm font-medium text-slate-300">
+        <a href="/" class="hover:text-white transition-colors">Home</a>
+        <a href="/albuquerque/" class="hover:text-white transition-colors">Albuquerque</a>
+        <a href="/santa-fe/" class="hover:text-white transition-colors">Santa Fe</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-grow">
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <footer class="py-10 text-center text-slate-500 text-sm border-t border-slate-800 mt-auto bg-[#0f172a]">
+    <div class="max-w-2xl mx-auto px-6 mb-8">
+      <h3 class="text-lg font-bold text-slate-300 mb-2">Contact Dismas</h3>
+      <p class="mb-4">505.271.2228 &bull; me@dismas.broker</p>
+      <a href="mailto:me@dismas.broker" class="text-blue-400 hover:text-blue-300 underline">Schedule a Consultation</a>
+    </div>
+    <p>&copy; 2026 {{ .Site.Params.name }}. All rights reserved.</p>
+  </footer>
+</body>
+</html>
