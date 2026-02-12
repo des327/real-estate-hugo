@@ -7,11 +7,12 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-[#0f172a] text-white font-sans antialiased flex flex-col min-h-screen">
+  
   <nav class="p-6 border-b border-slate-800 bg-[#0f172a] sticky top-0 z-50">
     <div class="max-w-6xl mx-auto flex justify-between items-center">
       <div class="flex items-center gap-4">
          <a href="/">
-           <img src="/images/logo.png" alt="Equity NM" style="background-color: white; padding: 5px; border-radius: 4px; height: 45px; width: auto;">
+           <img src="/images/logo.png" alt="Equity NM" style="height: 45px; width: auto; filter: brightness(0) invert(1);">
          </a>
          <div class="hidden md:block leading-tight">
            <div class="font-bold text-lg">Insights</div>
@@ -29,6 +30,7 @@
   <main class="flex-grow flex flex-col items-center justify-center text-center pt-20 pb-12 px-4">
     <h1 class="text-4xl md:text-5xl font-bold mb-4 tracking-tight">New Mexico Housing Intelligence</h1>
     <p class="text-lg text-slate-400 mb-16 max-w-2xl leading-relaxed">Professional data to help you navigate 2026 with confidence.</p>
+    
     <div class="grid md:grid-cols-2 gap-6 max-w-5xl w-full px-4">
       <div class="bg-[#1e293b] p-12 rounded-xl border border-slate-700/50 shadow-2xl flex flex-col items-center">
         <h2 class="text-2xl font-bold mb-2">Albuquerque</h2>
@@ -42,5 +44,30 @@
       </div>
     </div>
   </main>
+
+  <div class="bg-[#0f172a] py-20 text-center border-t border-slate-800 mt-12">
+    <div class="max-w-2xl mx-auto px-6">
+      <h3 class="text-2xl font-bold mb-4">Work with Dismas</h3>
+      <p class="text-slate-400 mb-8 text-sm">Ready to discuss your next move in the New Mexico market?</p>
+      
+      <div class="space-y-2 mb-8 text-blue-400 font-medium">
+        <div class="flex items-center justify-center gap-2">
+           <span>📞 Phone:</span> <a href="tel:5052712228" class="hover:underline">505.271.2228</a>
+        </div>
+        <div class="flex items-center justify-center gap-2">
+           <span>✉️ Email:</span> <a href="mailto:me@dismas.broker" class="hover:underline">me@dismas.broker</a>
+        </div>
+      </div>
+
+      <a href="mailto:me@dismas.broker" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded shadow-lg transition-all">
+        📅 Schedule a Viewing
+      </a>
+      <p class="text-xs text-slate-500 mt-4">Instant booking via Google Calendar</p>
+    </div>
+  </div>
+
+  <footer class="py-10 text-center text-slate-500 text-sm border-t border-slate-800">
+    <p>&copy; 2026 {{ .Site.Params.name }}. All rights reserved.</p>
+  </footer>
 </body>
 </html>
