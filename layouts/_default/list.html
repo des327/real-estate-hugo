@@ -24,7 +24,10 @@
   </nav>
 
   <main class="flex-grow max-w-4xl mx-auto py-16 px-6 w-full">
-    <h1 class="text-4xl font-bold mb-12 text-center border-b border-slate-800 pb-8 uppercase tracking-widest">{{ .Title }}</h1>
+    <h1 class="text-4xl font-bold mb-12 text-center border-b border-slate-800 pb-8 uppercase tracking-widest text-blue-400">
+      {{ .Title }} Market Updates
+    </h1>
+    
     <div class="grid gap-8">
       {{ range .Pages }}
       <article class="bg-[#1e293b] p-8 rounded-xl border border-slate-700 hover:border-blue-500 transition-colors">
@@ -38,5 +41,9 @@
       {{ end }}
     </div>
   </main>
+
+  <footer class="py-10 text-center text-slate-500 text-sm border-t border-slate-800 mt-auto">
+    <p>&copy; 2026 {{ .Site.Params.name }}. All rights reserved.</p>
+  </footer>
 </body>
 </html>
